@@ -1,6 +1,6 @@
 # Taller de Docker
 
-## ¿QUÉ PROBLEMA VIENE A RESOLVER?
+## ¿QUÉ PROBLEMA VIENE A RESOLVER DOCKER?
 
 Docker resuelve varios problemas clave en el desarrollo y despliegue de aplicaciones:
 
