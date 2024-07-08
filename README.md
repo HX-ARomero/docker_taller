@@ -38,8 +38,6 @@ Docker resuelve varios problemas clave en el desarrollo y despliegue de aplicaci
 - [Descargar para Windows](https://www.docker.com/products/docker-desktop/)
 - [Instructivo de Instalación para Windows](https://docs.docker.com/desktop/install/windows-install/)
 - [Documentación para desarrolladores](https://docs.docker.com/?_gl=1*1m0ompz*_ga*MjAyNTczMDU3OS4xNzE0NTE3MzMx*_ga_XJWPQMJYHQ*MTcxNDUxNzMzMS4xLjEuMTcxNDUxODY5OS41Ni4wLjA.)
-- [Docker Hub](https://hub.docker.com)
-- [Docker Hub - postgres](https://hub.docker.com/_/postgres)
 
 ## VERIFICAR INSTALACIÓN
 
@@ -97,7 +95,7 @@ Detalle:
 
 ## 2. IMAGEN
 
-### Creación
+### Creación de la Imagen
 
 > Creamos la imagen de nuestra aplicación ingresando en la terminal integrada el comando:
 
@@ -109,7 +107,7 @@ docker build .
 - ".": Ubicación donde buscará el archivo "Dockerfile", en este caso, en la misma ubicación donde se encuentra abierta la terminal.
 - Una vez creada nos devolverá el "id" de la imagen creada.
 
-### Manejo de Imagenes
+### Manejo de Imágenes
 
 - Mediante comandos en consola:
 
@@ -142,7 +140,7 @@ docker rmi <nombreImagen_o_idImagen>
 node_modules
 ```
 
-### Creación
+### Creación del Contenedor
 
 > Creamos el Contenedor a partir de una Imagennuestra ingresando en la terminal integrada el comando:
 
@@ -201,6 +199,79 @@ const config = {
 ### C. Contenedor-Contenedor
 
 > Para este tipo de Conexiones utilizaremos "Docker-Compose".
+
+## DOCKER HUB
+
+> Docker Hub es un servicio en línea proporcionado por Docker para alojar y distribuir imágenes Docker. Actúa como un repositorio central donde los desarrolladores pueden almacenar y compartir sus imágenes Docker, permitiendo un acceso fácil y rápido a ellas.
+
+### Características y beneficios de Docker Hub:
+
+1. Repositorios Públicos y Privados:
+   - Repositorios Públicos: Cualquiera puede ver y descargar las imágenes almacenadas en estos repositorios. Son ideales para compartir imágenes con la comunidad.
+   - Repositorios Privados: Solo los usuarios autorizados pueden acceder a ellos. Son útiles para proyectos privados y para compartir imágenes dentro de equipos o empresas.
+2. Automated Builds:
+   - Docker Hub puede integrarse con repositorios de código fuente como GitHub o Bitbucket. Cada vez que se realiza un cambio en el código, Docker Hub puede automáticamente construir una nueva imagen Docker basada en ese código.
+3. Webhooks
+   - Permiten la integración con otros servicios y herramientas de automatización.
+   - Por ejemplo, se puede configurar un webhook para que notifique a un servicio de CI/CD cada vez que se publica una nueva imagen.
+4. Docker Official Images
+   - Docker Hub alberga imágenes oficiales mantenidas por Docker, como las de sistemas operativos (Ubuntu, CentOS), lenguajes de programación (Python, Node.js), y bases de datos (MySQL, PostgreSQL).
+   - Estas imágenes son revisadas y mantenidas regularmente para asegurar su calidad y seguridad.
+5. Community Images
+   - Además de las imágenes oficiales, Docker Hub permite a la comunidad subir y compartir sus propias imágenes.
+   - Esto incluye imágenes para herramientas y aplicaciones populares.
+6. Colaboración y Control de Acceso
+
+- Docker Hub permite la colaboración entre equipos mediante la gestión de usuarios y equipos, así como el control de acceso a los repositorios.
+
+### Usos Comunes de Docker Hub
+
+1. Distribución de Aplicaciones: Los desarrolladores pueden subir sus imágenes Docker a Docker Hub para que otros las descarguen y las utilicen. Esto facilita la distribución de aplicaciones y servicios.
+2. Integración y Entrega Continua (CI/CD): Docker Hub se puede integrar con pipelines de CI/CD para automatizar el proceso de construcción, prueba y despliegue de aplicaciones.
+3. Almacenamiento y Backup: Docker Hub actúa como un almacenamiento seguro para las imágenes Docker, facilitando la recuperación y reutilización de imágenes en diferentes entornos.
+
+### Ejemplo de Uso de Docker Hub
+
+Para subir una imagen Docker a Docker Hub, se siguen los siguientes pasos:
+
+1. Crear una cuenta en Docker Hub: Si aún no tienes una cuenta, regístrate en Docker Hub.
+2. Iniciar sesión desde la línea de comandos:
+
+```bash
+docker login
+```
+
+3. Construir una imagen Docker:
+
+```bash
+docker build -t usuario/nombre_imagen:tag .
+```
+
+4. Subir la imagen a Docker Hub:
+   docker push usuario/nombre_imagen:tag
+
+```bash
+
+```
+
+5. Descargar la imagen desde Docker Hub en otro entorno:
+
+```bash
+docker pull usuario/nombre_imagen:tag
+```
+
+### Beneficios de Docker Hub
+
+- Acceso Global: Las imágenes Docker almacenadas en Docker Hub pueden ser accesibles desde cualquier parte del mundo, facilitando el despliegue de aplicaciones en diferentes entornos.
+- Facilidad de Uso: Docker Hub proporciona una interfaz web intuitiva y comandos simples para gestionar imágenes y repositorios.
+- Seguridad: Docker Hub ofrece opciones de seguridad, como repositorios privados y autenticación de dos factores, para proteger las imágenes y datos sensibles.
+
+> En resumen, Docker Hub es una plataforma centralizada para almacenar, compartir y gestionar imágenes Docker, mejorando la colaboración y facilitando la distribución de aplicaciones en contenedores.
+
+### Ejemplo
+
+- [Docker Hub](https://hub.docker.com)
+- [Docker Hub - postgres](https://hub.docker.com/_/postgres)
 
 ## DOCKER COMPOSE
 
